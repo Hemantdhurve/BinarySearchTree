@@ -24,12 +24,15 @@ namespace BinaryTreeProb
             this.leftTree = null;
 
         }
-        int leftCount = 0, rightCount = 0;
+
+        public static int leftCount = 0, rightCount = 0;
         bool result = false;
         public void Insert(T item)
         {
             T currentNodeValue = this.Nodedata;
-            if ((currentNodeValue.CompareTo(item)) > 0) // "A".CompareTo("a")
+            //To assigning value to left and right by using if else statement
+
+            if ((currentNodeValue.CompareTo(item)) > 0) 
             {
                 if (this.leftTree == null)
                 {
@@ -50,34 +53,34 @@ namespace BinaryTreeProb
             }
         }
 
-
+        //Creating Display method to display binary tree
         public void Display()
         {
             if (this.leftTree != null)
             {
-                this.leftCount++;
+                leftCount++;
                 this.leftTree.Display();
             }
-            Console.WriteLine(this.Nodedata.ToString());
+            Console.WriteLine(this.Nodedata.ToString() + " ");
+
             if (this.rightTree != null)
             {
-                this.rightCount++;
+                rightCount++;
                 this.rightTree.Display();
             }
         }
 
-        public void GetSize()
+        public void Size()
         {
-            Console.WriteLine("Size" + " " + (1 + this.leftCount + this.rightCount));
+            Console.WriteLine("Size" + " " + (1 + rightCount + leftCount ));
         }
-
         public bool IfExists(T element, BinaryTree<T> node)
         {
             if (node == null)
                 return false;
             if (node.Nodedata.Equals(element))
             {
-                Console.WriteLine("Found the element in Binary Search Tree" + " " + node.Nodedata);
+                Console.WriteLine("Found the element in BinarySearch Tree" + " " + node.Nodedata);
                 result = true;
             }
             else
