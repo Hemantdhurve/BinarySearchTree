@@ -53,7 +53,7 @@ namespace BinaryTreeProb
             }
         }
 
-        //Creating Display method to display binary tree
+        //Creating Display method to 
         public void Display()
         {
             if (this.leftTree != null)
@@ -74,7 +74,7 @@ namespace BinaryTreeProb
         {
             Console.WriteLine("Size" + " " + (1 + rightCount + leftCount ));
         }
-        public bool IfExists(T element, BinaryTree<T> node)
+        public bool Search(T element, BinaryTree<T> node)
         {
             if (node == null)
                 return false;
@@ -86,9 +86,9 @@ namespace BinaryTreeProb
             else
                 Console.WriteLine("Current element is {0} in Binary Search Tree", node.Nodedata);
             if (element.CompareTo(node.Nodedata) < 0)
-                IfExists(element, node.leftTree);
+                Search(element, node.leftTree);
             if (element.CompareTo(node.Nodedata) > 0)
-                IfExists(element, node.rightTree);
+                Search(element, node.rightTree);
             return result;
         }
     }

@@ -17,5 +17,7 @@ obj.Insert(63);
 obj.Insert(67);
 obj.Display();
 obj.Size();
+bool result = obj.Search(63, obj);
+Console.WriteLine(result);
 
 Console.ReadLine();
